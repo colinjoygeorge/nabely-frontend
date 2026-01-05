@@ -1,0 +1,1569 @@
+:root {
+    --text: #242424;
+	--transparentText: #2424243b;
+    --background: #ececec;
+	--selection: #757575;
+
+    /* --primary: #5d0095; */
+    --primary: #43755F;
+
+	/* --secondary: #e8baba; */
+	--secondary: #ffa630;
+
+    /* --accent: #a32e2e; */
+	--accent: #94c2ae;;
+
+	--color1: #d9d1db;
+	--color2: #94c2ae;
+	--color3: #43755F;
+	--color4: #ffa630;
+	--color5: #42242d;
+
+    /* Header */
+    --ubuntu: 'Ubuntu', sans-serif;
+
+    /* Headings */
+    --archivo: 'Archivo', sans-serif;
+
+    /* Main */
+    --metrophobic: 'Metrophobic', sans-serif;
+}
+
+* {
+	scroll-behavior: smooth;
+	scroll-padding-top: 7.5rem;
+	box-sizing: border-box;
+	transition: all 0.3s ease-in-out;
+}
+
+html, body {
+	overflow-x: hidden;
+	margin: 0;
+	padding: 0;
+	background-color: var(--background);
+	position: relative;
+    line-height: 1.5;
+}
+
+html.onePageDisplay {
+	min-height: 100vh;
+	width: 100vw;
+}
+
+html.onePageDisplay body {
+	width: 100%;
+	height: 100%;
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+html.onePageDisplay body .realHeader {
+	left: 0;
+}
+
+html.onePageDisplay body .headerSpaceholder {
+	display: block;
+}
+
+html.onePageDisplay body main {
+	flex-grow: 1;
+}
+
+main {
+	width: 100vw;
+    /* min-height: calc(100lvh - 9.6rem); */
+	position: relative;
+}
+
+::selection {
+	color: var(--background);
+	background-color: var(--selection);
+}
+
+button, a {
+	cursor: pointer;
+	text-decoration: none;
+}
+
+a {
+    font-family: var(--archivo);
+    font-weight: 700;
+    color: var(--primary);
+	border-radius: 10px;
+	outline: 0px solid rgba(0, 0, 0, 0);
+	outline-offset: -10px;
+}
+
+a:hover {
+	color: var(--color5);
+}
+
+a:focus-visible {
+	color: var(--color5);
+	outline: 2px solid var(--color5);
+	outline-offset: 3px;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+/* HEADER */
+.betterHeader {
+	font-family: var(--ubuntu);
+}
+
+.betterHeader .headerSpaceholder {
+	height: 5rem;
+	width: 100%;
+	position: relative;
+	display: none;
+}
+
+.betterHeader .realHeader {
+	/* background-color: var(--background); */
+	height: 5rem;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	display: flex;
+	justify-content: right;
+	align-items: center;
+	flex-wrap: nowrap;
+	z-index: 5;
+	border-bottom: 2px solid transparent;
+	box-sizing: border-box;
+}
+
+.betterHeader .logoLink {
+	display: flex;
+	justify-content: left;
+	align-items: center;
+	margin-left: 1rem;
+	left: 0;
+	padding: 0.05rem 0.5rem;
+	position: absolute;
+	z-index: 2;
+	border-radius: 10px;
+	outline: 0px solid black;
+	transition: all 0.3s ease-in-out;
+	outline-offset: -10px;
+	height: 5rem;
+
+	color: var(--text);
+}
+
+.betterHeader .logoLink img {
+	position: relative;
+	height: 10rem;
+	width: 10rem;
+	margin-right: 0.25rem;
+	transition: all 0.1s ease-in-out 0s !important;
+	fill: var(--text);
+	pointer-events: none;
+	filter: 
+		drop-shadow(1px 1px 0 var(--color5))
+        drop-shadow(-1px 1px 0 var(--color5))
+        drop-shadow(0.5px -0.5px 0 var(--color5));
+}
+
+.betterHeader .logoLink img * {
+	transition: all 0.1s ease-in-out 0s !important;
+}
+
+.betterHeader .logoLink h2 {
+	position: relative;
+	color: var(--text);
+	white-space: nowrap;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 2rem;
+	font-family: var(--ubuntu);
+	margin: 0;
+	margin-bottom: 0.125rem;
+}
+
+.betterHeader .logoLink:hover h2 {
+	color: var(--accent);
+    font-size: 2.2rem;
+}
+
+.betterHeader .logoLink:hover img {
+	fill: var(--accent);
+    transform: scale(1.1);
+}
+
+
+.betterHeader .logoLink:focus-visible {
+	outline: 5px solid var(--secondary);
+	outline-offset: -6px;
+}
+
+.betterHeader .logoLink:focus-visible h2 {
+	color: var(--accent);
+    font-size: 2.2rem;
+}
+
+.betterHeader .logoLink:focus-visible img {
+	fill: var(--accent);
+	transform: scale(1.1);
+}
+
+.betterHeader .navBar {
+	display: flex;
+	justify-content: right;
+	align-items: center;
+	margin: 0rem 1rem;
+	position: relative;
+	height: 100%;
+}
+
+.betterHeader .navBar .distanceChecker {
+	position: relative;
+	height: 100%;
+	width: 2rem;
+	opacity: 0;
+}
+
+.betterHeader .navBar .spaceHolder {
+	position: relative;
+	display: flex;
+	justify-content: right;
+	align-items: center;
+}
+
+.betterHeader .navBar .spaceHolder .openNav {
+	position: absolute;
+	width: max(1.2rem, 3.5vw);
+	height: max(1.2rem, 3.5vw);
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+	border-radius: 100%;
+	outline: 0px solid black;
+	outline-offset: -10px;
+	transition: all 0.3s ease-in-out;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0.5rem;
+	background-color: var(--background);
+}
+
+.betterHeader .navBar .spaceHolder .openNav svg {
+	position: absolute;
+	height: 70%;
+	width: 70%;
+	transition: all 0.3s ease-in-out;
+	fill: var(--text);
+	outline: 0px solid black;
+	outline-offset: -10px;
+	border-radius: 100%;
+}
+
+.betterHeader .navBar .spaceHolder .openNav .hamburger {
+	opacity: 1;
+}
+
+.betterHeader .navBar .spaceHolder .openNav .close {
+	opacity: 0;
+}
+
+.betterHeader .navBar .spaceHolder .openNav:hover svg {
+	/* fill: var(--accent); */
+	transform: scale(1.1);
+}
+
+.betterHeader .navBar .spaceHolder .openNav:focus-visible svg {
+	/* fill: var(--accent); */
+	/* outline: 2px solid var(--accent); */
+	
+	outline: 2px solid var(--text);
+
+	outline-offset: 4px;
+}
+
+.betterHeader .navBar ul {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-left: 0;
+	list-style: none;
+	height: 100%;
+	margin: 0;
+	position: relative;
+	/* background-color: var(--background); */
+	z-index: 3;
+}
+
+.betterHeader .navBar[data-expanded="true"] .spaceHolder .openNav {
+	visibility: hidden;
+}
+
+.betterHeader .navBar[data-expanded="false"] .spaceHolder .openNav {
+	visibility: visible;
+}
+
+.betterHeader .navBar[data-expanded="true"] ul {
+	position: relative;
+	opacity: 1 !important;
+}
+
+.betterHeader .navBar[data-expanded="false"] ul {
+	position: absolute;
+	top: 100%;
+}
+
+.betterHeader .navBar[data-expanded="false"] ul[data-open="false"] {
+	display: none;
+}
+
+.betterHeader .navBar ul[data-open="true"] {
+	opacity: 1;
+	right: -1rem;
+	width: 100vw;
+	flex-wrap: wrap;
+	border-bottom: 2px solid transparent;
+}
+
+.betterHeader .navBar ul[data-open="false"] {
+	opacity: 0;
+}
+
+.betterHeader .navBar ul {
+	position: absolute;
+}
+
+.betterHeader .navBar ul li {
+	white-space: nowrap;
+	width: max-content;
+	padding: 0rem 0.5rem;
+	position: relative;
+}
+
+.betterHeader .navBar ul li a {
+	font-family: var(--mainFont);
+	text-transform: uppercase;
+	color: var(--background);
+	background-color: var(--color3);
+	padding: 0.5rem;
+	border-radius: 10px;
+	outline: 0px solid rgba(0, 0, 0, 0);
+	outline-offset: -10px;
+	transition: all 0.3s ease-in-out;
+}
+
+.betterHeader .navBar ul li a.invertedPill {
+	font-family: var(--mainFont);
+	text-transform: uppercase;
+	color: var(--color3);
+	background-color: var(--background);
+	padding: 0.5rem;
+	border-radius: 10px;
+	outline: 0px solid rgba(0, 0, 0, 0);
+	outline-offset: -10px;
+	transition: all 0.3s ease-in-out;
+}
+
+.betterHeader .navBar ul li .headerButton {
+	background-color: var(--background);
+	padding: 0.5rem;
+	border-radius: 50%;
+	outline: 0px solid rgba(0, 0, 0, 0);
+	outline-offset: -10px;
+	transition: all 0.3s ease-in-out;
+	width: 2rem;
+	position: relative;
+	aspect-ratio: 1;
+	display: grid;
+	place-items: center;
+	border: none;
+}
+
+.betterHeader .navBar ul li .headerButton svg {
+	width: 100%;
+	height: 100%;
+	display: grid;
+	place-items: center;
+	fill: var(--primary);
+	position: absolute;
+	top: 0;
+	cursor: pointer;
+	right: 0;
+}
+
+.betterHeader .navBar ul li a:hover {
+	font-size: larger;
+	font-weight: bolder;
+}
+
+.betterHeader .navBar ul li a:focus-visible {
+	font-size: larger;
+	font-weight: bolder;
+	outline: 5px solid var(--secondary);
+	outline-offset: 0px;
+	padding: 0.5rem;
+}
+
+/* FOOTER */
+footer {
+	position: relative;
+	width: 100%;
+	background-color: var(--background);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	padding: 1rem;
+	border-top: 2px solid var(--text);
+    gap: 0.5rem;
+}
+
+footer a {
+    color: var(--text);
+}
+
+footer p {
+	margin: 0rem;
+}
+
+/* SECTION */
+section {
+	position: relative;
+	height: fit-content;
+	padding: 1rem;
+    color: var(--text);
+	font-family: var(--metrophobic);
+    margin: 3rem 0rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap-reverse;
+	flex-direction: column-reverse;
+
+    background-size: cover;
+	background-repeat: no-repeat;
+}
+
+section.eventSection {
+	display: flex;
+	flex-direction: column;
+	margin-top: 0rem;
+	padding-top: 0rem;
+}
+
+section.dashboardSearch {
+	margin-top: 5rem;
+	margin-bottom: 0rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+section.dashboardSearch .filterSection {
+	padding: 0rem;
+	margin: 0rem;
+	display: flex;
+	gap: 0.5rem;
+	flex-direction: row;
+	justify-content: unset;
+	align-items: unset;
+	flex-wrap: wrap;
+}
+
+section.dashboardSearch .filterSection .otherFilters {
+	padding: 0rem;
+	margin: 0rem;
+	display: flex;
+	gap: 0.5rem;
+	flex-direction: row;
+	justify-content: unset;
+	align-items: unset;
+	flex-wrap: wrap;
+}
+
+section.dashboardSearch svg {
+	transform: scale(1);
+	position: relative;
+	margin: 0.25rem;
+	top: 0rem;
+	right: 0rem;
+}
+
+section.dashboardSearch .searchSVG {
+	top: -2.25rem;
+    margin-left: auto;
+    margin-right: 1rem;
+}
+
+section.dashboardSearch .searchButton {
+	position: relative;
+	border-radius: 5px;
+	display: flex !important;
+	justify-content: center;
+	align-items: center;
+	border: 1px solid var(--text);
+	opacity: 0.5;
+	padding: 0.25rem;
+}
+
+section.dashboardSearch .searchButton[data-active="true"] {
+	opacity: 1;
+	display: flex;
+}
+
+section.dashboardSearch .searchButton[data-active="true"] ~ .filterButton {
+	display: flex;
+}
+
+section.dashboardSearch .filterButton .filterSelect {
+	display: none;
+	border-radius: 5px;
+	background-color: var(--background);
+	border: 1px solid var(--color3);
+	padding: 0.25rem;
+	justify-content: center;
+	align-items: center;
+}
+
+section.dashboardSearch .filterButton[data-active="true"] {
+	opacity: 1;
+}
+
+section.dashboardSearch .filterButton[data-active="true"] .filterSelect {
+	display: flex;
+    flex-wrap: wrap;
+}
+
+section.dashboardSearch .filterButton .closeFilter {
+	display: none;
+    position: relative;
+    margin: 0rem 0.25rem;
+    top: 0rem;
+    right: 0rem;
+	border: none;
+	padding: 0rem;
+	height: 1rem;
+	width: 1rem;
+}
+
+section.dashboardSearch .filterButton .closeFilter svg {
+	margin: 0rem;
+	transform: scale(0.75);
+}
+
+section.dashboardSearch .filterButton[data-active="true"] .closeFilter {
+	display: flex;
+}
+
+section.dashboardSearch .filterButton {
+	position: relative;
+	border-radius: 5px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: 1px solid var(--text);
+	display: none;
+	opacity: 0.5;
+	flex-direction: column;
+	padding: 0.25rem;
+	cursor: pointer;
+}
+
+section.dashboardSearch .filterButton .filterButtonLabel {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: var(--text);
+}
+
+section.dashboardSearch .filterButton p,  section.dashboardSearch .searchButton p {
+	margin: 0.25rem;
+	padding: 0;
+	height: 1rem;
+	width: fit-content;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: var(--text);
+}
+
+section.dashboardSearch form {
+	background-color: transparent;
+	max-width: unset;
+}
+
+section.eventSection h1 {
+	width: 100%;
+}
+
+section .sectionBackground {
+	position: absolute;
+	object-fit: cover;
+	height: 100%;
+	width: 100vw;
+}
+
+section form .searchBar {
+	padding: 0.5rem;
+	border-radius: 25px;
+	border: 2px solid var(--color3);
+	width: 100%;
+	height: 2rem;
+	color: var(--text);
+}
+
+section form .searchBar:focus-visible {
+	outline: 2px solid var(--primary);
+	outline-offset: 3px;
+}
+
+section form svg {
+	width: 1.25rem;
+	height: 2rem;
+	display: grid;
+	place-items: center;
+	fill: var(--primary);
+	position: absolute;
+	top: 0;
+	margin-top: 1rem;
+	margin-right: 1.75rem;
+	cursor: pointer;
+	right: 0;
+}
+
+section .eventLayout {
+	width: 100%;
+	height: fit-content;
+	display: grid;
+	gap: 1rem;
+	grid-template-columns: repeat(auto-fit, minmax(218px, 1fr));
+}
+
+section .eventLayout .event {
+	padding: 1rem;
+	min-width: 12rem;
+	aspect-ratio: 1.5/1;
+	border-radius: 10px;
+	position: relative;
+	overflow: hidden;
+	box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.25);
+	border: 1px solid var(--transparentText);
+	cursor: pointer;
+}
+
+section .eventLayout .event:hover {
+	box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.25);
+}
+
+section .eventLayout .event .eventInformation > * {
+	margin: 0;
+	height: 100%;
+	font-size: 1rem;
+	font-weight: 400;
+	cursor: pointer;
+}
+
+section .eventLayout .event.hiddenEvent {
+	display: none !important;
+}
+
+section .eventLayout .event.registeredEvent img {
+	position: relative;
+	width: 20%;
+	aspect-ratio: 1;
+	object-fit: cover;
+	z-index: 2;
+	border-radius: 5px;
+	border: 1px solid var(--text);
+	display: block;
+}
+
+section .eventLayout .event.registeredEvent .eventLabel {
+	display: flex;
+	justify-content: left;
+	align-items: start;
+}
+
+section .eventLayout .event.registeredEvent .eventLabel .eventDetails {
+	display: flex;
+	justify-content: left;
+	align-items: center;
+	flex-direction: column;
+	margin-left: 0.5rem;
+}
+
+section .eventLayout .event.registeredEvent .eventLabel .eventDetails > * {
+	margin: 0;
+	height: 100%;
+	font-size: 1rem;
+	font-weight: 400;
+	cursor: pointer;
+	width: 100%;
+    text-align: left;
+}
+
+section .eventLayout .event.registeredEvent .eventLabel .eventDetails h2 {
+	font-weight: 600;
+}
+
+section .eventLayout .event.registeredEvent .eventDescription {
+	margin: 0.25rem 0rem;
+	height: fit-content;
+	overflow: hidden;
+	position: relative;
+}
+
+section .eventLayout .event.registeredEvent .eventLabel .eventDetails .eventRating {
+	display: flex;
+	justify-content: left;
+	align-items: center;
+	width: 100%;
+}
+
+section .eventLayout .event.registeredEvent .numRatings {
+	margin: 0;
+	transform: translateY(-0.15rem);
+	position: relative;
+}
+
+section .eventLayout .event.registeredEvent .numRatings::before {
+	content: '(';
+}
+
+section .eventLayout .event.registeredEvent .numRatings::after {
+	content: ')';
+}
+
+section .eventLayout .event.registeredEvent .eventLabel .eventDetails .eventRating .eventStar svg {
+	width: 1rem;
+	height: 1rem;
+	fill: var(--secondary);
+}
+
+section .eventLayout .event.registeredEvent .eventLabel .eventDetails .eventRating .eventStar.emptyStar svg {
+	fill: var(--text);
+	opacity: 0.5;
+}
+
+section .eventLayout .event.event.registeredEvent .eventInformation {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: absolute;
+	bottom: 0;
+	padding-bottom: 0.25rem;
+	padding-left: 1rem;
+	padding-right: 1rem;
+	width: 100%;
+	left: 0;
+	background-color: var(--color1);
+}
+
+section .eventLayout .event.registeredEvent .eventInformation::before {
+	content: "";
+    position: absolute;
+    width: 100%;
+    height: 24px;
+	top: -85%;
+	left: 0;
+    background: linear-gradient(transparent 60%, var(--color1) 100%);
+    z-index: 2;
+    pointer-events: none;
+}
+
+section .eventLayout .event.event.unregisteredEvent .eventInformation::before {
+	content: "";
+    position: absolute;
+    width: 100%;
+    height: 24px;
+	top: -85%;
+	left: 0;
+    background: linear-gradient(transparent 60%, var(--color1) 100%);
+    z-index: 2;
+    pointer-events: none;
+}
+
+section .eventLayout .event.event.registeredEvent .eventInformation > * {
+	height: fit-content;
+}
+
+section .eventLayout .event.event.registeredEvent .eventInformation .friendsAttending {
+	white-space: nowrap;
+	margin: 0;
+	position: relative;
+}
+
+section .eventLayout .event.event.registeredEvent .eventInformation .friendsAttending::before {
+	content: "Friends Here: ";
+
+}
+
+section .eventLayout .event.unregisteredEvent img {
+	position: absolute;
+	object-fit: cover;
+	width: 100%;
+	height: 100%;
+	z-index: 2;
+	inset: 0;
+}
+
+section .eventLayout .event.unregisteredEvent .eventInformation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    padding-bottom: 0.25rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    width: 100%;
+    left: 0;
+    background-color: var(--color1);
+	z-index: 2;
+}
+
+section .textContent {
+	padding: 0rem 1rem;
+}
+
+section .textContent > * {
+	position: relative;
+}
+
+section .textContent .textHeader {
+	position: relative;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	margin-bottom: 1rem;
+}
+
+section .textContent .textHeader svg {
+	width: 2rem;
+	height: 2rem;
+	display: grid;
+	place-items: center;
+	fill: var(--primary);
+}
+
+section .otherContent {
+	width: 100%;
+	max-width: 90%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	max-height: 90%;
+}
+
+section .otherContent.largeScreenLayoutVisible {
+	display: none;
+}
+
+section .otherContent img {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	border-radius: 20px;
+	box-shadow: -0.5rem -0.5rem 0px 0px var(--primary);
+}
+
+section.accent .otherContent img {
+	box-shadow: 0.5rem 0.5rem 0px 0px var(--color5);
+}
+
+section.accent {
+    background-color: var(--color1);
+	z-index: 2;
+}
+
+section.accent::after {
+	content: '';
+	width: 100vw;
+	top: 0;
+	height: 100%;
+	display: block;
+	position: absolute;
+    background-color: var(--color1);
+	z-index: -1;
+}
+
+section.accent::before {
+	content: '';
+	width: 100vw;
+	top: 0;
+	height: 100%;
+	display: block;
+	position: absolute;
+    background-color: var(--color1);
+	transform: translateX(-100%);
+	z-index: -1;
+}
+
+section.accent .textContent {
+	padding: 0rem 1.5rem;
+}
+
+section h2 {
+	text-align: center;
+	width: fit-content;
+	margin: 1rem 0rem;
+}
+
+section.accent .textContent .textHeader svg {
+	fill: var(--color5);
+}
+
+section.accent a {
+    color: var(--accent);
+	border-radius: 10px;
+	outline: 0px solid rgba(0, 0, 0, 0);
+	outline-offset: -10px;
+}
+
+section.accent a:hover {
+	color: var(--primary);
+}
+
+section.accent a:focus-visible {
+	color: var(--primary);
+	outline: 2px solid var(--primary);
+	outline-offset: 3px;
+}
+
+section.hero {
+    padding: 0rem;
+    margin: 0rem;
+    height: calc(80lvh);
+    display: flex;
+	flex-direction: column;
+    justify-content: end;
+	align-items: center;
+}
+
+section.hero img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+	transform: scaleX(-1);
+}
+
+section.hero h1 {
+    font-family: var(--archivo);
+    position: relative;
+    z-index: 2;
+    color: var(--background);
+    text-align: center;
+	padding: 1rem;
+	margin: 2rem;
+	border-radius: 20px;
+    background-color: var(--primary);
+    font-size: 1.5rem;
+	font-weight: 200;
+}
+
+section.hero a {
+	font-family: var(--archivo);
+    position: relative;
+    z-index: 2;
+    color: var(--text);
+    text-align: center;
+	padding: 0.5rem;
+	margin: 1.5rem auto 0rem auto;
+	border-radius: 20px;
+    background-color: var(--secondary);
+    font-size: 1.5rem;
+	font-weight: 200;
+	max-width: 15rem;
+}
+
+section .ctaButton {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+section .ctaButton:hover {
+	color: var(--text);
+	outline: 5px solid var(--accent);
+	outline-offset: 3px;
+	background-color: var(--accent);
+}
+
+
+section .ctaButton:focus-visible {
+	color: var(--text);
+	outline: 5px solid var(--accent);
+	outline-offset: 5px;
+	background-color: var(--accent);
+}
+
+section .ctaButton::after {
+	content: '➜';
+	position: relative;
+	height: 100%;
+	width: 0rem;
+	top: 0;
+	right: 0;
+	border-radius: 15px;
+	overflow: hidden;
+	transition: all 0.3s ease-in-out;
+	display: flex;
+	justify-content: right;
+	align-items: center;
+	color: var(--text)
+}
+
+section .ctaButton:hover::after, section .ctaButton:focus-visible::after  {
+	width: 1.5rem;
+	padding-left: 0.25rem;
+}
+
+section.hero h1 strong {
+	font-weight: 500;
+}
+
+section.onePageSection {
+	margin: 0; 
+	height: 100%;
+	min-height: calc(100vh - 8.6rem);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+form {
+	border: none;
+	width: 100%;
+	background-color: var(--primary);
+	border-radius: 5px;
+	color: var(--background);
+	max-width: 30rem;
+}
+
+form .dividerBar {
+	position: relative;
+	height: 0.2rem;
+	background-color: var(--color5);
+	margin: 0.5rem 2rem;
+	border-radius: 20px;
+}
+
+form fieldset {
+	border: none;
+	padding: 0;
+	position: relative;
+	margin: 0rem;
+	margin: 0.5rem 1rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+	flex-direction: column;
+}
+
+form fieldset svg {
+	position: absolute;
+	width: 1rem;
+	height: 1rem;
+	right: 0.5rem;
+	z-index: 2;
+	fill: var(--primary);
+	transform: scale(0);
+	top: 1rem;
+}
+
+form fieldset input {
+	border: none;
+	padding: 0;
+	position: relative;
+	background-color: var(--background);
+	color: var(--text);
+	border: 2px solid var(--accent);
+	border-radius: 5px;
+	padding: 0.5rem;
+	margin: 0.5rem 0rem;
+	width: 100%;
+}
+
+form fieldset .passwordRequirements {
+	display: none;
+	background-color: var(--accent);
+	border-radius: 10px;
+	padding: 0.5rem;
+	color: var(--text);
+	margin: 0.5rem 0rem;
+}
+
+form fieldset .passwordRequirements h3 {
+	font-size: 0.9rem;
+	margin: 0rem;
+}
+
+form fieldset .passwordRequirements ul {
+	margin: 0rem;
+	padding-left: 2rem;
+}
+
+form fieldset .passwordRequirements ul li {
+	font-size: 0.85rem;
+	margin: 0rem;
+}
+
+form fieldset .passwordRequirements ul p {
+	font-size: 0.85rem;
+	margin: 0rem;
+}
+
+form fieldset input[type=password] {
+	display: none;
+}
+
+form fieldset input:focus-visible {
+	outline: none;
+	border: 2px solid var(--secondary);
+}
+
+form fieldset input::placeholder {
+	color: var(--text);
+	opacity: 0.5;
+}
+
+form fieldset input.enabled {
+	display: inline-block;
+}
+
+form fieldset input.enabled ~ .passwordRequirements {
+	display: inline-block;
+}
+
+form fieldset input.valid ~ .passwordRequirements {
+	display: none;
+}
+
+form fieldset input.valid ~ svg{
+	transform: scale(1);
+}
+
+form fieldset label {
+	top: 0;
+	position: absolute;
+	width: 0rem;
+	height: 0rem;
+	overflow: hidden;
+}
+
+form fieldset .multipleOptions label {
+    position: relative;
+	width: fit-content;
+    padding: 0.25rem;
+    height: fit-content;
+    color: var(--text);
+}
+
+form fieldset .multipleOptions .multipleOptionSelection {
+    display: flex;
+	flex-wrap: wrap;
+	flex-direction: row !important;
+}
+
+form fieldset .multipleOptions .multipleOptionSelection input {
+    width: fit-content;
+}
+
+form fieldset .ctaButton {
+	font-family: var(--archivo);
+    position: relative;
+    z-index: 2;
+    color: var(--text);
+    text-align: center;
+	padding: 0.5rem;
+	border-radius: 20px;
+    background-color: var(--secondary);
+	font-weight: 400;
+	max-width: 15rem;
+	border: none;
+	margin: 0.5rem;
+	display: none;
+}
+
+form fieldset .ctaButton.enabled {
+	display: flex;
+}
+
+form fieldset a {
+	color: var(--background);
+	width: 100%;
+	text-align: center;
+	padding: 0.25rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+form fieldset a.noPill {
+	color: var(--background);
+	width: 100%;
+	text-align: center;
+	padding: 0.25rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+form fieldset a.noPill:hover, form fieldset a.noPill:focus-visible {
+	color: var(--background);
+	outline: 2px solid var(--accent);
+	outline-offset: -2px;
+}
+
+form fieldset a:hover, form fieldset a:focus-visible {
+	color: var(--text);
+	outline: 2px solid var(--accent);
+	outline-offset: -2px;
+}
+
+form fieldset a.signInGOOGLE {
+	color: var(--background);
+	background-color: #4285f6;
+}
+
+form fieldset a.signInFACEBOOK {
+	color: var(--background);
+	background-color: rgb(59, 89, 152);
+}
+
+form fieldset a.signInAPPLE {
+	color: var(--background);
+	background-color: rgb(0, 0, 0);
+}
+
+@media screen and (min-width: 600px) {
+	section.hero {
+		align-items: start;
+	}
+
+	section.dashboardSearch .filterSection {
+		align-items: flex-start;
+	}
+
+	section.hero h1 {
+		padding: 3rem;
+		margin: 0rem 2rem 2rem 0rem;
+		border-radius: 0px 20px 20px 0px;
+		font-size: 2rem;
+	}
+
+	section {
+		display: block;
+		background-position-y: 100%;
+	}
+
+	section h2 {
+		font-size: 1.75rem;
+		margin: 0.5rem;
+	}
+
+	section .textContent {
+		position: relative;
+		height: 100%;
+	}
+
+	section .textContent .textHeader {
+		flex-direction: row-reverse;
+		gap: 1rem;
+		width: 100%;
+		justify-content: left;
+	}
+
+	section .otherContent {
+		width: 50%;
+		right: 0;
+		margin: 0.5rem 1rem 0.5rem 2rem;
+		float: right;
+		position: relative;
+	}
+
+	section .otherContent.largeScreenLayoutVisible {
+		display: flex !important;
+	}
+
+	section .otherContent.smallScreenLayoutVisible {
+		display: none !important;
+	}
+
+	section .textContent > * {
+		text-align: justify;
+	}
+
+	section.onePageSection .textContent {
+		bottom: 0;
+		right: 0;
+	}
+}
+
+@media screen and (min-width: 1000px) {
+	section {
+		margin: 1rem 10vw;
+	}
+
+	section.hero h1 {
+		font-size: 3rem;
+	}
+
+	section .otherContent.largeScreenLayoutVisible {
+		display: none !important;
+	}
+
+	section .otherContent.smallScreenLayoutVisible {
+		display: flex !important;
+	}
+
+	section .otherContent {
+		width: 100%;
+		float: none;
+	}
+
+	section {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: 1fr;
+		place-items: center;
+		order: -1;
+		gap: 1rem;
+	}
+
+	section.onePageSection {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	section.accent .textContent {
+		order: 1;
+	}
+
+	section.accent .textContent .textHeader {
+		flex-direction: row;
+		justify-content: right;
+	}
+
+}
+
+@media screen and (min-width: 1500px) {
+	section {
+		margin: 3rem 10vw;
+		background-position-y: 75%;
+	}
+
+	section .textContent p {
+		font-size: 1.25rem;
+	}
+
+	section .textContent a {
+		font-size: 1.25rem;
+	}
+
+	section .textContent h2 {
+		font-size: 2rem;
+	}
+
+	section .textContent .textHeader svg {
+		width: 2.5rem;
+		height: 2.5rem;
+	}
+
+	section .eventLayout {
+		width: 100%;
+		height: fit-content;
+		display: grid;
+		gap: 1rem;
+		grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+	}
+
+	footer {
+		font-size: 1.5rem;
+	}
+}
+
+@media screen and (min-width: 2000px) {
+	section {
+		margin: 5rem 10vw;
+	}
+
+	section .textContent p {
+		font-size: 1.75rem;
+	}
+
+	section .textContent a {
+		font-size: 1.75rem;
+	}
+
+	section .textContent h2 {
+		font-size: 2.5rem;
+	}
+
+	section .textContent .textHeader svg {
+		width: 3rem;
+		height: 3rem;
+	}
+
+	.betterHeader .realHeader {
+		height: 7.5rem;
+	}
+
+	.betterHeader .realHeader .logoLink {
+		height: 7.5rem;
+	}
+
+	.betterHeader .logoLink h2 {
+		font-size: 2.5rem;
+	}
+
+	.betterHeader .navBar ul li a {
+		font-size: 1.5rem;
+	}
+
+	.betterHeader .logoLink:hover h2 {
+		font-size: 3.5rem;
+	}
+	
+	.betterHeader .logoLink:focus-visible h2 {
+		font-size: 3.5rem;
+	}
+
+	.betterHeader .navBar ul li a:hover {
+		font-size: 2rem;
+	}
+
+	.betterHeader .navBar ul li a:focus-visible {
+		font-size: 2rem;
+	}
+
+	footer {
+		font-size: 2rem;
+	}
+}
+
+@media screen and (min-width: 2500px) {
+	section {
+		margin: 7rem 10vw;
+	}
+
+	section .textContent p {
+		font-size: 2.25rem;
+	}
+
+	section .textContent a {
+		font-size: 2.25rem;
+	}
+
+	section .textContent h2 {
+		font-size: 3rem;
+	}
+
+	section .textContent .textHeader svg {
+		width: 3.5rem;
+		height: 3.5rem;
+	}
+}
+
+@media screen and (min-width: 3000px) {
+	section {
+		margin: 10rem 10vw;
+	}
+
+	section .textContent p {
+		font-size: 2.75rem;
+	}
+
+	section .textContent a {
+		font-size: 2.75rem;
+	}
+
+	section .textContent h2 {
+		font-size: 4rem;
+	}
+
+	section .textContent .textHeader svg {
+		width: 4.5rem;
+		height: 4.5rem;
+	}
+
+	.betterHeader .realHeader {
+		height: 10rem;
+	}
+
+	.betterHeader .realHeader .logoLink {
+		height: 10rem;
+	}
+
+	.betterHeader .logoLink h2 {
+		font-size: 5rem;
+	}
+
+	.betterHeader .navBar ul li a {
+		font-size: 3rem;
+	}
+
+	.betterHeader .logoLink:hover h2 {
+		font-size: 6rem;
+	}
+	
+	.betterHeader .logoLink:focus-visible h2 {
+		font-size: 6rem;
+	}
+
+	.betterHeader .navBar ul li a:hover {
+		font-size: 4rem;
+	}
+
+	.betterHeader .navBar ul li a:focus-visible {
+		font-size: 4rem;
+	}
+
+	footer {
+		font-size: 4rem;
+	}
+}
+
+@media screen and (min-width: 3500px) {
+	section {
+		margin: 12rem 10vw;
+	}
+
+	section .textContent p {
+		font-size: 3.25rem;
+	}
+
+	section .textContent a {
+		font-size: 3.25rem;
+	}
+
+	section .textContent h2 {
+		font-size: 5rem;
+	}
+
+	section .textContent .textHeader svg {
+		width: 5.5rem;
+		height: 5.5rem;
+	}
+}
+
+/* @media screen and (max-width: 250px) {
+	body {
+		background-color: red;
+	}
+} */

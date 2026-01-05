@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" class="onePageDisplay">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Sign In To Nabely</title>
+		<!-- Link Local Assets -->
+		<link rel="stylesheet" href="/style.css">
+		<script src="/script.js"></script>
+		<link rel="icon" type="image/x-icon" href="">
+		<!-- Link External Assets -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Metrophobic&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<header class="betterHeader">
+			<script src="/betterHeader.js"></script>
+			<div class="headerSpaceholder"></div>
+			<div class="realHeader">
+				<a class="logoLink" href="/index.html">
+					<img src="/assets/nabely_TRANSPARENT.png" alt="">
+					<!-- <h2 class="logoName">Nabely</h2> -->
+				</a>
+				<nav class="navBar" data-expanded="true">
+					<div class="distanceChecker"></div>
+					<div class="spaceHolder">
+						<button class="openNav">
+							<svg class="hamburger" version="1.0" xmlns="http://www.w3.org/2000/svg" width="512.000000pt" height="512.000000pt" viewBox="0 0 512.000000 512.000000" preserveAspectRatio="xMidYMid meet">
+								<g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)">
+									<path d="M95 4146 c-67 -29 -105 -106 -91 -181 9 -47 59 -102 104 -115 26 -8 785 -10 2474 -8 l2437 3 27 21 c53 39 69 71 69 134 0 63 -16 95 -69 134 l-27 21 -2447 2 c-2019 2 -2452 0 -2477 -11z" />
+									<path d="M95 2546 c-67 -29 -105 -106 -91 -181 9 -47 59 -102 104 -115 26 -8 785 -10 2474 -8 l2437 3 27 21 c53 39 69 71 69 134 0 63 -16 95 -69 134 l-27 21 -2447 2 c-2019 2 -2452 0 -2477 -11z" />
+									<path d="M95 946 c-67 -29 -105 -106 -91 -181 9 -47 59 -102 104 -115 26 -8 785 -10 2474 -8 l2437 3 27 21 c53 39 69 71 69 134 0 63 -16 95 -69 134 l-27 21 -2447 2 c-2019 2 -2452 0 -2477 -11z" />
+								</g>
+							</svg>
+							<svg class="close" version="1.0" xmlns="http://www.w3.org/2000/svg" width="512.000000pt" height="512.000000pt" viewBox="0 0 512.000000 512.000000" preserveAspectRatio="xMidYMid meet">
+								<g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)">
+									<path d="M4580 4789 c-14 -5 -474 -458 -1022 -1007 l-998 -997 -997 997 c-1085 1084 -1016 1021 -1110 1003 -49 -9 -109 -69 -118 -118 -18 -94 -81 -25 1003 -1109 l997 -998 -1002 -1002 c-1087 -1089 -1026 -1021 -1009 -1114 9 -47 73 -111 120 -120 93 -17 25 -78 1113 1009 l1003 1002 1002 -1002 c1090 -1089 1021 -1026 1115 -1008 49 9 109 69 118 118 18 94 81 25 -1008 1114 l-1002 1003 1002 1002 c1086 1087 1026 1021 1009 1113 -17 91 -127 149 -216 114z" />
+								</g>
+							</svg>
+						</button>
+					</div>
+					<ul data-open="false">
+						<li>
+							<a class="invertedPill" href="/pages/about.html">About</a>
+						</li>
+						<li>
+							<a href="/pages/signin.html">Sign In</a>
+						</li>
+						<li>
+							<a href="/pages/signup.html">Sign Up</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+		<main>
+			<section class="onePageSection" style="background-image: url(/assets/david-nicolai-VEsDauTEAkw-unsplash\ \(1\).jpg);">
+				<form id="contact" class="contactForm" action="">
+					<h2 style="width: 100%;">Let's Get To It</h2>
+					<fieldset style="margin-bottom: 0rem;">
+						<input id="email" class="enabled" placeholder="Email" type="email" required autocomplete="email">
+						<svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="512.000000pt" height="512.000000pt" viewBox="0 0 512.000000 512.000000" preserveAspectRatio="xMidYMid meet">
+							<g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)">
+								<path d="M2330 5110 c-494 -48 -950 -230 -1350 -538 -195 -150 -448 -432 -594 -662 -63 -99 -186 -351 -230 -471 -49 -134 -102 -340 -128 -499 -31 -195 -31 -565 0 -760 45 -276 116 -498 237 -745 132 -269 269 -460 489 -681 221 -220 412 -357 681 -489 247 -121 469 -192 745 -237 195 -31 565 -31 760 0 276 45 498 116 745 237 269 132 460 269 681 489 220 221 357 412 489 681 88 179 132 296 180 476 63 240 78 371 78 649 0 278 -15 409 -78 649 -48 180 -92 297 -180 476 -132 269 -269 460 -489 681 -221 220 -412 357 -681 489 -246 121 -474 193 -740 235 -147 23 -475 34 -615 20z m1569 -1452 c50 -16 127 -91 148 -146 24 -64 22 -147 -6 -205 -32 -65 -1678 -1699 -1752 -1740 -72 -38 -156 -38 -228 1 -42 22 -800 701 -929 832 -51 51 -76 113 -75 185 2 151 113 253 263 243 36 -3 80 -12 97 -22 27 -13 532 -468 696 -625 l47 -46 748 747 c411 410 761 753 779 762 69 35 131 39 212 14z" />
+							</g>
+						</svg>
+						<label style="display: flex; width: 0rem; height: 0rem; overflow: hidden; position: absolute;" for="email">Email:</label>
+					</fieldset>
+					<fieldset id="passwordField" style="margin-top: 0rem; margin-bottom: 0rem;">
+						<input style="display: inline-block;" type="password" placeholder="Password" id="password" name="password" required>
+						<svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="512.000000pt" height="512.000000pt" viewBox="0 0 512.000000 512.000000" preserveAspectRatio="xMidYMid meet">
+							<g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)">
+								<path d="M2330 5110 c-494 -48 -950 -230 -1350 -538 -195 -150 -448 -432 -594 -662 -63 -99 -186 -351 -230 -471 -49 -134 -102 -340 -128 -499 -31 -195 -31 -565 0 -760 45 -276 116 -498 237 -745 132 -269 269 -460 489 -681 221 -220 412 -357 681 -489 247 -121 469 -192 745 -237 195 -31 565 -31 760 0 276 45 498 116 745 237 269 132 460 269 681 489 220 221 357 412 489 681 88 179 132 296 180 476 63 240 78 371 78 649 0 278 -15 409 -78 649 -48 180 -92 297 -180 476 -132 269 -269 460 -489 681 -221 220 -412 357 -681 489 -246 121 -474 193 -740 235 -147 23 -475 34 -615 20z m1569 -1452 c50 -16 127 -91 148 -146 24 -64 22 -147 -6 -205 -32 -65 -1678 -1699 -1752 -1740 -72 -38 -156 -38 -228 1 -42 22 -800 701 -929 832 -51 51 -76 113 -75 185 2 151 113 253 263 243 36 -3 80 -12 97 -22 27 -13 532 -468 696 -625 l47 -46 748 747 c411 410 761 753 779 762 69 35 131 39 212 14z" />
+							</g>
+						</svg>						
+						<label style="display: flex; width: 0rem; height: 0rem; overflow: hidden; position: absolute;" for="password">Password:</label>
+					</fieldset>
+					<fieldset style="margin: 0rem;">
+						<button style="display: flex;" class="ctaButton" name="submit" type="submit" id="submit">Submit</button>
+                        <a style="font-size: 0.8rem; font-weight: 200; width: fit-content;" class="noPill" href="/pages/error.html">Forgot your password?</a>
+					</fieldset>
+					<div class="dividerBar"></div>
+					<fieldset style="margin-top: 1rem;">
+						<a class="signInGOOGLE" href="/index.html">Sign In With Google</a>
+					</fieldset>
+					<fieldset>
+						<a class="signInFACEBOOK" href="/index.html">Sign In With Facebook</a>
+					</fieldset>
+					<fieldset>
+						<a class="signInAPPLE" href="/index.html">Sign In With Apple</a>
+					</fieldset>
+				</form>
+			</section>
+		</main>
+		<footer>
+			<a href="/index.html">Nabely</a>
+			<p>&copy; 2023 Nabely</p>
+		</footer>
+		<script>
+			// API Configuration
+			const API_BASE_URL = 'http://localhost:3000/api/v1';
+
+			// Get form and elements
+			const form = document.getElementById('contact');
+			const emailInput = document.getElementById('email');
+			const passwordInput = document.getElementById('password');
+			const submitButton = document.getElementById('submit');
+
+			// Handle form submission
+			form.addEventListener('submit', async (e) => {
+				e.preventDefault();
+
+				const email = emailInput.value.trim();
+				const password = passwordInput.value;
+
+				// Disable submit button during request
+				submitButton.disabled = true;
+				submitButton.textContent = 'Signing in...';
+
+				try {
+					const response = await fetch(`${API_BASE_URL}/auth/signin`, {
+						method: 'POST',
+						headers: {
+							'Content-Type': 'application/json',
+						},
+						body: JSON.stringify({ email, password })
+					});
+
+					const data = await response.json();
+
+					if (data.success) {
+						// Store the access token
+						localStorage.setItem('accessToken', data.data.accessToken);
+						localStorage.setItem('user', JSON.stringify(data.data.user));
+
+						// Show success message
+						alert('Sign in successful! Redirecting to dashboard...');
+
+						// Redirect to dashboard
+						window.location.href = '/pages/dashboard.html';
+					} else {
+						// Show error message
+						alert(`Sign in failed: ${data.error.message}`);
+						submitButton.disabled = false;
+						submitButton.textContent = 'Submit';
+					}
+				} catch (error) {
+					console.error('Sign in error:', error);
+					alert('An error occurred during sign in. Please try again.');
+					submitButton.disabled = false;
+					submitButton.textContent = 'Submit';
+				}
+			});
+		</script>
+	</body>
+</html>
